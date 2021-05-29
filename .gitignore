@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/Source/EfCoreAzureAD/EfCoreAzureAD/bin/Debug/netcoreapp3.1
+/Source/EfCoreAzureAD/EfCoreAzureAD/obj
+/Source/EfCoreAzureAD/.vs/EfCoreAzureAD/v16
+/.vs/EfcoreAzureAdAuthentication/v16
