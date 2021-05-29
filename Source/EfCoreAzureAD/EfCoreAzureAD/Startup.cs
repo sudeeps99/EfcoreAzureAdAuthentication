@@ -6,10 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using EfCoreAzureAD.ServiceModel;
 
 namespace EfCoreAzureAD
@@ -26,6 +22,7 @@ namespace EfCoreAzureAD
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
             services.AddSingleton<IAzureADTokenService, AzureADTokenService>();
             services.AddSingleton<AadAuthenticationInterceptor>();
             services.AddDbContext<AzureSQlDBContext>((provider, dbContext) =>

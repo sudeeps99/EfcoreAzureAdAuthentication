@@ -2,8 +2,6 @@
 using Azure.Identity;
 using Microsoft.Extensions.Caching.Memory;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,6 +11,10 @@ namespace EfCoreAzureAD.ServiceModel
     {
         private const string _cacheKey = nameof(AzureADTokenService);
         private readonly IMemoryCache _cache;
+        public AzureADTokenService(IMemoryCache cache)
+        {
+            _cache = cache;
+        }
         public async Task<(string AccessToken, DateTimeOffset ExpiresOn)> GetAccessTokenAsync(CancellationToken cancellationToken = default)
         {
             
